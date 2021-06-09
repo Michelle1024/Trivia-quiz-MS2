@@ -29,6 +29,7 @@ class Question {
         this.choices = choices;
         this.answer = answer;
     }
+    
     isCorrectAnswer(choice) {
         return this.answer === choice;
     }
@@ -40,7 +41,7 @@ function displayQuestion() {
         showScores();
     } else {
         // show question
-        let questionElement =document.getElementById("questions");
+        let questionElement =document.getElementById("question");
         questionElement.innerHTML = quiz.getQuestionIndex().text;
 
         // show options
@@ -109,3 +110,26 @@ let quiz = new Quiz(questions);
 
 // Display question
 displayQuestion;
+
+//Add a timer
+let time = 2;
+let quizTimeInMinutes = time * 60 *60;
+quizTime = quizTimeInMinutes / 60;
+
+let counting = document.getElementById("count-down");
+
+function startCountdown() {
+    let quizTimer = setInterval(function() {
+        if (quizTime <=0) {
+            clearInterval(quizTimer);
+            showScores();
+        } else {
+            quizTime--;
+            let sec = Math.floor(quizTime % 60);
+            let min = Math.floor(quizTime / 60) % 60;
+            counting.innerHTML = `TIME: ${min} : ${sec}`;
+        }
+    }, 1000)
+}
+
+startCountdown();
