@@ -69,7 +69,7 @@ function showProgress() {
     let currentQuestionNumber = quiz.questionIndex + 1;
     let progressElement = document.getQuestionIndex("progress");
     progressElement.innerHTML =
-    `Question ${currentQuestionNumber} of ${quiz.question.length}`;
+    `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
 }
 
 // Show Score
@@ -77,7 +77,7 @@ function showScores() {
     let quizEndHTML =
         `
             <h1>Quiz Completed</h1>
-            <h2 id="score">Your Score : ${quiz.score} of ${quiz.question.length}</h2>
+            <h2 id="score">Your Score : ${quiz.score} of ${quiz.questions.length}</h2>
             <div class="quiz-repeat">
                 <a href="index.html">Take Trivia Quiz Again</a>    
             </div>
@@ -86,3 +86,26 @@ function showScores() {
         quizElement.innerHTML = quizEndHTML;
 }
 
+// Create Trivia Questions
+let questions = [
+    new Question(
+        "Which country consumes the most chocolate per capita?", ["Ireland", "Switzerland", "Austria", "Sweden"], "Switzerland"
+    ),
+    new Question(
+        "Which of Shakespeare’s plays is the longest?", ["Macbeth", "King Lear", "Hamlet", "Twelfth Night"], "Hamlet"
+    ),
+    new Question(
+        "What color eyes do most humans have?", ["Brown", "Blue", "Green", "Gray"], "Brown"
+    ),
+    new Question(
+        "Which planet is the hottest in the solar system?", ["Mercury", "Venus", "Mars", "Jupiter"], "Venus"
+    ),
+    new Question(
+        "How many eyes does a bee have?", ["Two", "Three", "Four", "Five"], "Five"
+    )
+];
+
+let quiz = new Quiz(questions);
+
+// Display question
+displayQuestion;
