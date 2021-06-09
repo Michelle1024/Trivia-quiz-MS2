@@ -8,7 +8,7 @@
 
 html {
     font-size: 10px;
-    background-image: url("../images/bacground-image.jpg");
+    background-image: url("../images/background-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -42,7 +42,7 @@ img {
     margin: 0 auto;
     background-color: teal;
     padding: 1rem 5rem 5rem 5rem;
-    border: 3px solid var(--color primary);
+    border: 3px solid lightgrey;
     border-radius: 5px;
 }
 
@@ -50,7 +50,7 @@ img {
     background-color: lightgrey;
     font-size: 4rem;
     text-align: center;
-    color: black;
+    color: goldenrod;
     padding: 1rem 0;
     width: 100%;
     margin-bottom: 2rem;
@@ -63,7 +63,13 @@ img {
     align-items: center;
 }
 
-.quiz-header #count-dowm {
+.quiz-header #progress {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 70;
+}
+
+.quiz-header #count-down {
     font-size: 1.6rem;
     font-weight: 700;
     background-color: orangered;
@@ -73,10 +79,11 @@ img {
     border-radius: 3px;
 }
 
-.quiz-header #questions {
+.quiz-box #questions {
     font-size: 1.8rem;
     font-weight: 600;
-    color: green;
+    color: black;
+    background: lightgrey;
     border: 1px solid white;
     border-width: 1px 0;
     padding: 5px 0;
